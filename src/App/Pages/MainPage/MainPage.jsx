@@ -1,9 +1,10 @@
 import React from 'react'
+import Login from '../LoginPage/Login'
 
 export default function MainPage() {
     return (
         <div className='main_page'>
-            <h1>Hello From the Main</h1>
+            <Login />
         </div>
     )
 }
