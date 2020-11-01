@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Header from '../../Layouts/Header/Header'
+import './StyleChat.css'
 export default function Chat() {
     return (
         <div className='chat'>
-            <h1>Hello From Chat</h1>
+            <Header />
         </div>
     )
 }
