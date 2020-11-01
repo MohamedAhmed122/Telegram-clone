@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import ChatPage from '../ChatPage/ChatPage'
 import Login from '../LoginPage/Login'
 
 export default function MainPage() {
@@ -7,7 +8,7 @@ export default function MainPage() {
     return (
         <div className='main_page'>
             {!isAuthenticated?
-             <Login /> : <h1>I am Already Logged in </h1>
+             <Login /> : <ChatPage />
             }
            
         </div>
