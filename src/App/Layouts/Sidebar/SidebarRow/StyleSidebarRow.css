@@ -1,0 +1,31 @@
+.sidebar_row_main{
+    cursor: pointer;
+}
+.sidebar_row_main:hover{
+    cursor: pointer;
+    background-color: #5275b1;
+}
+.sidebar_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar_left{
+    display: flex;
+    align-items: center;
+}
+.sidebar_info{
+    margin-left: 10px ;
+}
+.text{
+    margin-top: 5px;
+}
+.line{
+    width: 100%;
+    margin-top: 15px;
+    border-bottom:  1px solid rgba(190, 190, 190, 0.1) ;;
+}
