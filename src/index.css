@@ -19,3 +19,6 @@ code {
 html,body{
   background-color: #2d4671;
 }
+.MuiSvgIcon-root{
+  color: white;
+}

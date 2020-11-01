@@ -3,6 +3,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 import './StyleSidebar.css'
+import { IconButton } from '@material-ui/core';
 
 
 export default function Sidebar() {
@@ -11,10 +12,14 @@ export default function Sidebar() {
             <div className='sidebar_header'>
                 <div className='search'>
                     <SearchIcon />
-                    <input type='text' placeholder='Search for Channel or Chat Room' />
+                    <input type='text' placeholder='Search for channels or users' />
                 </div>
+                <IconButton>
+                    <BorderColorIcon />
+                </IconButton>
+               
             </div>
-            <BorderColorIcon />
+            
         </div>
     )
 }

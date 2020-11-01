@@ -1,7 +1,34 @@
 .sidebar{
     flex: 0.3;
+    border-right: 1px solid rgba(190, 190, 190, 0.1) ;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 .sidebar_header{
+    margin: 20px;
     display: flex;
     align-items: center;
+  
+}
+.search{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    width:80%;
+    height: 10px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.search input{
+    border: none;
+    width: 100%;
+    outline-width: 0;
+}
+.search .MuiSvgIcon-root{
+    color: gray;
 }
