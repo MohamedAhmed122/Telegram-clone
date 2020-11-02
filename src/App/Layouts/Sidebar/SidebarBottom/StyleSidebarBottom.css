@@ -3,12 +3,15 @@
     align-items: center;
     justify-content: space-evenly;
     margin: 20px;
+    width: 100%;
+    z-index: 100;
 }
 .sidebar_bottom_main{
     bottom: 0px;
     position: fixed;
     border-top:  1px solid rgba(190, 190, 190, 0.1) ;
     overflow: hidden;
+    background-color: #2d4671;
 
 }
 .sidebar_bottom_icons .MuiSvgIcon-root{
@@ -16,5 +19,5 @@
     margin-right:3rem ;
 }
 .sidebar_bottom_icons .MuiSvgIcon-root:hover{
-    color: rgba(2, 150,199);
+    color: #5275b1;
 }

@@ -1,5 +1,6 @@
 .sidebar_row_main{
     cursor: pointer;
+    position: relative;
 }
 .sidebar_row_main:hover{
     cursor: pointer;

@@ -20,11 +20,37 @@ export default function Sidebar() {
                     <BorderColorIcon />
                 </IconButton>
             </div>
-            <SidebarRow src='https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'/>
-            <SidebarRow src='https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'/>
-            <SidebarRow src='https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'/>
-            <SidebarRow src='https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+            <SidebarRow src={img}/>
+
+            <SidebarRow src={img}/>
+           
             <SidebarBottom />
         </div>
     )
 }
+const img = 'https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'

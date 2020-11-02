@@ -1,4 +1,4 @@
-import { Avatar, IconButton } from '@material-ui/core'
+import { Avatar, Hidden } from '@material-ui/core'
 import React from 'react'
 import CommentIcon from '@material-ui/icons/Comment';
 import CallIcon from '@material-ui/icons/Call';
@@ -12,8 +12,11 @@ export default function SidebarBottom() {
             <div className='sidebar_bottom_icons'>
                 <Avatar src='https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all' />
                 <CallIcon />
-                <CommentIcon />
-                <SettingsIcon />
+                <Hidden smDown>
+                    <CommentIcon />
+                    <SettingsIcon />
+                </Hidden>
+                
             </div>
         </div>
     )

@@ -21,4 +21,5 @@ html,body{
 }
 .MuiSvgIcon-root{
   color: white;
+  cursor: pointer;
 }
