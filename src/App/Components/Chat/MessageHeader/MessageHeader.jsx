@@ -4,7 +4,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import './StyleHeader.css'
 
-export default function Header() {
+export default function MessageHeader() {
     return (
         <div className='header'>
             <div className='header_main'>
