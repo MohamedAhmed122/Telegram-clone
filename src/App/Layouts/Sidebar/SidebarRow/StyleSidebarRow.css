@@ -1,6 +1,7 @@
 .sidebar_row_main{
     cursor: pointer;
     position: relative;
+    text-decoration: none ;
 }
 .sidebar_row_main:hover{
     cursor: pointer;

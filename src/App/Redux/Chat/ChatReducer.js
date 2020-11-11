@@ -17,7 +17,7 @@ const initialState ={
             return{
                 ...state,
                 // channelName: payload.channelName,
-                channelId: payload.id
+                channelId: payload[0].id
             }
         default:
             return state;

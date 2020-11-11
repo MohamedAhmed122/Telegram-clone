@@ -1,11 +1,13 @@
-import { Avatar } from '@material-ui/core'
+import { Avatar} from '@material-ui/core'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './StyleSidebarRow.css'
 
-export default function SidebarRow({src, channelName}) {
+export default function SidebarRow({src, id,channelName}) {
+   
     return (
-        <div className='sidebar_row_main'>
+        <Link className='sidebar_row_main' to={`/channel/${id}`}>
             <div className='sidebar_row'>
                 <div className='sidebar_left'>
                     <Avatar src={src} />
@@ -17,7 +19,7 @@ export default function SidebarRow({src, channelName}) {
                 <p>time</p>
             </div>
             <div className='line'/>
-        </div>
+        </Link>
         
     )
 }

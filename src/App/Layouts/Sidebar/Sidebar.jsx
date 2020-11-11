@@ -7,34 +7,41 @@ import { IconButton } from '@material-ui/core';
 import SidebarRow from './SidebarRow/SidebarRow';
 import SidebarBottom from './SidebarBottom/SidebarBottom';
 import firebase from '../../Firebase/Firebase'
-import { useDispatch, useSelector } from 'react-redux';
-import {getChannelData} from '../../Redux/Chat/ChatReducer'
-import Loading from '../../Components/Loading/Loading'
+
 
 export default function Sidebar() {
 
     const [channel,setChannel] = useState([])
-    const {channelId}  = useSelector(state => state.chat)
-    const dispatch = useDispatch();
+    // const {channelId}  = useSelector(state => state.chat)
+    // const dispatch = useDispatch();
     const db = firebase.firestore();
 
     useEffect(()=>{
-        db.collection('channels').onSnapshot(snapshot => setChannel(snapshot.docs.map(doc =>({
-            id: doc.id,
-            data: doc.data()
-        }))))
+       const unsubscribe = db.collection('channels').onSnapshot(snapshot => 
+         setChannel(
+                snapshot.docs.map(doc =>({
+                id: doc.id,
+                data: doc.data()
+            })
+        )
+    ))
+    return () =>{
+        unsubscribe()
+    }
         // 
-    },[db,channel])
-    // dispatch(getChannelData(channel))   
- console.log(channel);
+    },[db,channel, ])
+   
        
     
   
     const handleAddNewChannel =() =>{
        const newChannel = prompt('Enter a Channel Name');
+       if(newChannel){
         db.collection('channels').add({
             channelName: newChannel
         })
+       }
+       
     }
     return (
         <div className='sidebar'>
