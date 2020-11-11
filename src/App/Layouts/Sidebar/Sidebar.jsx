@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
@@ -6,9 +6,27 @@ import './StyleSidebar.css'
 import { IconButton } from '@material-ui/core';
 import SidebarRow from './SidebarRow/SidebarRow';
 import SidebarBottom from './SidebarBottom/SidebarBottom';
+import firebase from '../../Firebase/Firebase'
 
 
 export default function Sidebar() {
+
+    const [channel,setChannel] = useState([])
+     const db = firebase.firestore();
+
+    useEffect(()=>{
+        db.collection('channels').onSnapshot(snapshot => setChannel(snapshot.docs.map(doc =>({
+            id: doc.id,
+            data: doc.data()
+        }))))
+    },[channel, db])
+
+    const handleAddNewChannel =() =>{
+       const newChannel = prompt('Enter a Channel Name');
+        db.collection('channels').add({
+            channelName: newChannel
+        })
+    }
     return (
         <div className='sidebar'>
             <div className='sidebar_header'>
@@ -17,38 +35,16 @@ export default function Sidebar() {
                     <input type='text' placeholder='Search for channels or users' />
                 </div>
                 <IconButton>
-                    <BorderColorIcon />
+                    <BorderColorIcon onClick={handleAddNewChannel} />
                 </IconButton>
             </div>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
+            {
+                channel.map(channel =>(
+                    <SidebarRow key={channel.id} id={channel.id} channelName={channel.data.channelName} src={img}/> 
+                ))
 
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-            <SidebarRow src={img}/>
-
-            <SidebarRow src={img}/>
-           
+            }
+            
             <SidebarBottom />
         </div>
     )
