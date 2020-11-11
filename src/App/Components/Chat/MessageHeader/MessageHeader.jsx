@@ -1,17 +1,33 @@
 import { Avatar, IconButton } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import {useParams} from 'react-router-dom'
+import firebase from '../../../Firebase/Firebase'
 
 import './StyleHeader.css'
 
 export default function MessageHeader() {
-    return (
+    const [channelName, setChannelName] = useState('')
+    const {channelId } = useParams()
+    const db = firebase.firestore()
+    useEffect(()=>{
+     
+        const unsubscribe = db.collection('channels').doc(channelId)
+        .onSnapshot(
+            snapshot => 
+                (setChannelName(snapshot.data())))
+  
+    return () =>{
+        unsubscribe()
+    }
+    },[db, channelId])
+    return ( 
         <div className='header'>
             <div className='header_main'>
                 <div className='header_left'>
                     <Avatar src={img} />
                     <div className='header_info'>
-                        <strong>Mohamed Youssef</strong>
+                        <strong>{channelName.channelName}</strong>
                         <p>TimeSamp</p>
                     </div>
                 </div>

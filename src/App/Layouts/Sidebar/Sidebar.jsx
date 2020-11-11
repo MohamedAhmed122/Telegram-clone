@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
@@ -6,43 +5,13 @@ import './StyleSidebar.css'
 import { IconButton } from '@material-ui/core';
 import SidebarRow from './SidebarRow/SidebarRow';
 import SidebarBottom from './SidebarBottom/SidebarBottom';
-import firebase from '../../Firebase/Firebase'
 
 
-export default function Sidebar() {
 
-    const [channel,setChannel] = useState([])
-    // const {channelId}  = useSelector(state => state.chat)
-    // const dispatch = useDispatch();
-    const db = firebase.firestore();
+export default function Sidebar({handleAddNewChannel,channel}) {
 
-    useEffect(()=>{
-       const unsubscribe = db.collection('channels').onSnapshot(snapshot => 
-         setChannel(
-                snapshot.docs.map(doc =>({
-                id: doc.id,
-                data: doc.data()
-            })
-        )
-    ))
-    return () =>{
-        unsubscribe()
-    }
-        // 
-    },[db,channel, ])
-   
-       
-    
-  
-    const handleAddNewChannel =() =>{
-       const newChannel = prompt('Enter a Channel Name');
-       if(newChannel){
-        db.collection('channels').add({
-            channelName: newChannel
-        })
-       }
-       
-    }
+
+
     return (
         <div className='sidebar'>
             <div className='sidebar_header'>
