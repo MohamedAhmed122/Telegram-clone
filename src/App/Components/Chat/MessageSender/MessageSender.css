@@ -32,3 +32,7 @@
 .message .MuiSvgIcon-root:hover{
     color: #5275b1;
 }
+
+.hidden_btn{
+    display: none;
+}

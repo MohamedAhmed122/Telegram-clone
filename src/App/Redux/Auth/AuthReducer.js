@@ -2,7 +2,7 @@ import { USER_SIGN_IN, USER_SIGN_OUT } from "./AuthType";
 
 
 const initialState ={
-    isAuthenticated: true,
+    isAuthenticated: false,
     currentUser: null
 }
 
