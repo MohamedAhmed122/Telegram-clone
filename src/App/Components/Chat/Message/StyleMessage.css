@@ -1,7 +1,4 @@
-.chat{
-    flex: 0.7;
-}
- .chat_body {
+.chat_body {
     margin-left: 10px;
     position: relative;
     background-color: white;
@@ -14,7 +11,6 @@
 .chat .message_body{
     display: flex;
     align-items: center;
-    /* flex-direction: row-reverse; */
     margin: 5px 20px;
 }
 .message_body_receiver{

@@ -1,12 +1,10 @@
-import { Avatar } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import MessageHeader from './MessageHeader/MessageHeader'
 import MessageSender from './MessageSender/MessageSender'
 import firebase from '../../Firebase/Firebase'
 import {useParams} from 'react-router-dom'
-import Loading from '../../Components/Loading/Loading'
-import './StyleChat.css'
 import { useSelector } from 'react-redux'
+import Message from './Message/Message'
 
 export default function Chat() {
     const {channelId} = useParams()
@@ -64,24 +62,9 @@ export default function Chat() {
 
     console.log(massages);
     return (
-        <div className='chat'> 
+        <div style={{flex: '0.7'}}> 
             <MessageHeader massages={massages} />
-           { massages.map(message =>(
-                <div 
-                key={message.id} 
-                className={`message_body ${ currentUser.displayName === message.displayName && 'message_body_receiver'} `}>
-                     
-                    <Avatar src={message?.userPhotoURL}/>
-                    <div className={`message_container`}>
-                        <p 
-                        className={`messages ${ currentUser.displayName === message.displayName && 'message_receiver'} `}>
-                            {message?.massages}
-                            </p>
-                        <p className='time_stamp '>time</p>
-                    </div>
-                </div>
-                ))
-            }
+            <Message currentUser={currentUser} massages={massages}/>
                 
             <MessageSender 
             inputText={inputText} 
