@@ -6,7 +6,7 @@ import firebase from '../../../Firebase/Firebase'
 
 import './StyleHeader.css'
 
-export default function MessageHeader() {
+export default function MessageHeader({massages}) {
     const [channelName, setChannelName] = useState('')
     const {channelId } = useParams()
     const db = firebase.firestore()
@@ -28,7 +28,9 @@ export default function MessageHeader() {
                     <Avatar src={img} />
                     <div className='header_info'>
                         <strong>{channelName.channelName}</strong>
-                        <p>TimeSamp</p>
+                        <p>
+                          Last seen at  {new Date (massages[massages.length -1]?.timeStamp?.toDate()).toUTCString()}
+                        </p>
                     </div>
                 </div>
                 <IconButton>

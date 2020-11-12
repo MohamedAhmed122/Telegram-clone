@@ -31,3 +31,8 @@
     margin-top: 15px;
     border-bottom:  1px solid rgba(190, 190, 190, 0.1) ;
 }
+.sidebar_left p{
+    color: lightgray;
+    font-size: 15px;
+    font-weight: 300;
+}

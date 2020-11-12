@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
@@ -6,11 +7,29 @@ import { IconButton } from '@material-ui/core';
 import SidebarRow from './SidebarRow/SidebarRow';
 import SidebarBottom from './SidebarBottom/SidebarBottom';
 
+import { Link, useParams } from 'react-router-dom'
+import firebase from '../../Firebase/Firebase'
+
+
 
 
 export default function Sidebar({handleAddNewChannel,channel}) {
 
+    const db = firebase.firestore()
+    const [messages, setMassages] = useState([])
+    // const {channelId} = useParams()
 
+    // useEffect(()=>{
+    //     if (channelId){
+    //         db.collection('channels').doc(channelId).collection('massages')
+    //         .orderBy('timeStamp','asc')
+    //         .onSnapshot(snapshot=>{
+    //              setMassages(snapshot.docs.map(doc=> doc.data()))
+    //          })
+    //     }
+       
+        
+    // },[channelId, db, setMassages])
 
     return (
         <div className='sidebar'>
