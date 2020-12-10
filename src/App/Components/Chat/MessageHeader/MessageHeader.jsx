@@ -7,7 +7,9 @@ import firebase from '../../../Firebase/Firebase'
 import './StyleHeader.css'
 
 export default function MessageHeader({massages}) {
+
     const [channelName, setChannelName] = useState('')
+    const [seed,setSeed] = useState()
     const {channelId } = useParams()
     const db = firebase.firestore()
     useEffect(()=>{
@@ -21,6 +23,12 @@ export default function MessageHeader({massages}) {
         unsubscribe()
     }
     },[db, channelId])
+
+    useEffect(()=>{
+        setSeed(Math.floor(Math.random()* 5000))
+    },[channelId])
+    
+    const img = `https://avatars.dicebear.com/api/human/${seed}.svg`
     return ( 
         <div className='header'>
             <div className='header_main'>
@@ -42,4 +50,3 @@ export default function MessageHeader({massages}) {
     )
 }
 
-const img = 'https://www.rollingstone.com/wp-content/uploads/2019/08/taylor-swift-ultimate-album-sheff.jpg'

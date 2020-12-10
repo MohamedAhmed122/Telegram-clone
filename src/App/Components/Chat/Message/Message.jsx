@@ -1,8 +1,11 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
 import './StyleMessage.css'
+// import {format} from 'date-fns'
+// import { convertTimeStamp } from '../../Utils/Utils'
 
 export default function Message({massages,currentUser }) {
+    // console.log(massages)
     return (
         <div className='chat'>
            { massages.map(message =>(
@@ -16,7 +19,7 @@ export default function Message({massages,currentUser }) {
                         className={`messages ${ currentUser.displayName === message.displayName && 'message_receiver'} `}>
                             {message?.massages}
                             </p>
-                        <p className='time_stamp '>time</p>
+                        {/* <p className='time_stamp '>date</p> */}
                     </div>
                 </div>
                 ))

@@ -15,7 +15,8 @@ export default function Chat() {
 
     const db = firebase.firestore()
 
-    const handleChange = e=>{
+    // handle Submit to handle the input and take the message and send it to the firebase
+    const handleSubmit= e=>{
         e.preventDefault();
         console.log(inputText);
         if (channelId){
@@ -30,6 +31,7 @@ export default function Chat() {
         }
       
     }
+    // get the all channel names
     useEffect(()=>{
         if (channelId){
             db.collection('channels').onSnapshot(snapshot => 
@@ -46,6 +48,7 @@ export default function Chat() {
          // 
      },[db,channel,channelId ])
     
+     // get all massages from the db
     useEffect(()=>{
         if (channelId){
             db.collection('channels').doc(channelId).collection('massages')
@@ -68,7 +71,7 @@ export default function Chat() {
                 
             <MessageSender 
             inputText={inputText} 
-            handleChange={handleChange} 
+            handleChange={handleSubmit} 
             setInputText={setInputText}/> 
         </div>
     )

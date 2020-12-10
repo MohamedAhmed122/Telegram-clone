@@ -8,14 +8,7 @@ import SidebarRow from './SidebarRow/SidebarRow';
 import SidebarBottom from './SidebarBottom/SidebarBottom';
 
 
-
-
-
-
-
 export default function Sidebar({handleAddNewChannel,channel}) {
-
-
 
     return (
         <div className='sidebar'>
@@ -30,7 +23,7 @@ export default function Sidebar({handleAddNewChannel,channel}) {
             </div>
             {
                 channel.map(channel =>(
-                    <SidebarRow key={channel.id} id={channel.id} channelName={channel.data.channelName} src={img}/> 
+                    <SidebarRow key={channel.id} id={channel.id} channelName={channel.data.channelName} /> 
                 ))
 
             }
@@ -39,4 +32,3 @@ export default function Sidebar({handleAddNewChannel,channel}) {
         </div>
     )
 }
-const img = 'https://pagesix.com/wp-content/uploads/sites/3/2020/03/bebe-rexha-30.jpg?quality=80&strip=all'
