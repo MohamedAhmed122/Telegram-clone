@@ -1,3 +1,9 @@
+# Telegram Clone ( Chat App )
+# Visit Website
+https://telegram1-clone.web.app
+# Image
+![alt text](https://i.ibb.co/jR3jY6h/Screenshot-2020-12-17-at-00-38-01.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
